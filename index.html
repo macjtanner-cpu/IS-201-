@@ -1,0 +1,206 @@
+<!--
+Mckay Tanner
+IS 201
+4/8/2026
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mckay Tanner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: stretch;
+            justify-content: stretch;
+            margin: 0;
+            padding: 0;
+        }
+        .card-wrapper {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: none;
+        }
+        /* Left Sidebar */
+        .sidebar {
+            background-color: #006064;
+            color: white;
+            width: 280px;
+            min-width: 280px;
+            padding: 40px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .sidebar .profile-pic {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top;
+            border: 4px solid #80DEEA;
+            margin-bottom: 16px;
+        }
+        .sidebar h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 4px; }
+        .sidebar p.title { font-size: 0.85rem; color: #B2EBF2; margin-bottom: 24px; }
+        .social-icons a {
+            color: white;
+            font-size: 1.3rem;
+            margin: 0 8px;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .social-icons a:hover { color: #80DEEA; }
+        .sidebar hr { border-color: rgba(255,255,255,0.2); width: 100%; margin: 20px 0; }
+        .sidebar .contact-info { font-size: 0.82rem; color: #B2EBF2; line-height: 2; }
+        .sidebar .contact-info i { width: 18px; }
+        .sidebar .btn-cv {
+            margin-top: 24px;
+            background-color: #80DEEA;
+            color: #006064;
+            font-weight: 700;
+            border: none;
+            padding: 10px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+        .sidebar .btn-cv:hover { background-color: #4DD0E1; }
+        /* Right Content */
+        .main-content {
+            background-color: white;
+            flex: 1;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .main-content .subtitle {
+            color: #00838F;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .main-content h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: #212121;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        .main-content h1 span { color: #212121; }
+        .main-content .mission {
+            color: #555;
+            font-size: 0.97rem;
+            line-height: 1.8;
+            margin-bottom: 32px;
+            border-left: 4px solid #80DEEA;
+            padding-left: 16px;
+        }
+        .nav-buttons a {
+            display: inline-block;
+            margin-right: 12px;
+            margin-bottom: 10px;
+            padding: 11px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-primary-custom {
+            background-color: #006064;
+            color: white;
+            border: 2px solid #006064;
+        }
+        .btn-primary-custom:hover { background-color: #00838F; border-color: #00838F; }
+        .btn-outline-custom {
+            background-color: transparent;
+            color: #006064;
+            border: 2px solid #006064;
+        }
+        .btn-outline-custom:hover { background-color: #E0F7FA; }
+        /* Right icon bar */
+        .icon-bar {
+            background-color: #F5F5F5;
+            width: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 0;
+        }
+        .icon-bar a { color: #9E9E9E; font-size: 1.1rem; text-decoration: none; transition: color 0.2s; }
+        .icon-bar a:hover { color: #006064; }
+        @media (max-width: 650px) {
+            .card-wrapper { flex-direction: column; }
+            .sidebar { width: 100%; min-width: unset; }
+            .icon-bar { flex-direction: row; width: 100%; height: 50px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card-wrapper">
+
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <img src="images/Selfie.JPG" alt="Mckay Tanner" class="profile-pic">
+            <h2>Mckay Tanner</h2>
+            <p class="title">Customer Success Manager</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/macjtanner/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/mckay.tanner.504826" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/in/mckay-tanner-21298b34b/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <hr>
+            <div class="contact-info">
+                <div><i class="fas fa-envelope"></i> mckayt3@byu.edu</div>
+                <div><i class="fas fa-map-marker-alt"></i> Alpine, UT</div>
+                <div><i class="fas fa-graduation-cap"></i> BYU Pre-Business</div>
+            </div>
+            <a href="resume.html" class="btn-cv">View Resume</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <p class="subtitle">Pre-Business Student &nbsp;|&nbsp; BYU</p>
+            <h1>Mckay <span>Tanner</span></h1>
+            <p class="mission">
+                To create meaningful value at the intersection of finance, technology, and relationships —
+                driving growth for the clients and communities I serve while becoming the best version
+                of myself as a business leader.
+            </p>
+            <div class="nav-buttons">
+                <a href="resume.html" class="btn-primary-custom">My Resume</a>
+                <a href="aboutme.html" class="btn-outline-custom">About Me</a>
+            </div>
+        </div>
+
+        <!-- Right Icon Bar -->
+        <div class="icon-bar">
+            <a href="resume.html" title="Resume"><i class="fas fa-file-alt"></i></a>
+            <a href="aboutme.html" title="About Me"><i class="fas fa-user"></i></a>
+            <a href="scratch.html" title="Sneakers Page"><i class="fas fa-shoe-prints"></i></a>
+            <a href="mailto:mckayt3@byu.edu" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

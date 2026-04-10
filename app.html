@@ -1,0 +1,299 @@
+<!--
+Mckay Tanner
+IS 201
+4/8/2026
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneaker Value Tracker</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 15px;
+        }
+        .back-link {
+            align-self: flex-start;
+            color: #80DEEA;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        .back-link:hover { color: white; }
+        .app-card {
+            background-color: #16213e;
+            border-radius: 16px;
+            padding: 40px;
+            width: 100%;
+            max-width: 560px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            border-top: 5px solid #00ACC1;
+        }
+        .app-card h1 {
+            color: #80DEEA;
+            font-size: 1.8rem;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+        .app-card .subtitle {
+            color: #8899aa;
+            font-size: 0.88rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            color: #80DEEA;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 6px;
+            margin-top: 16px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        select, input[type="number"] {
+            width: 100%;
+            padding: 11px 14px;
+            background-color: #0f3460;
+            color: #e0e0e0;
+            border: 1px solid #00ACC1;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            appearance: none;
+        }
+        select:focus, input[type="number"]:focus {
+            outline: none;
+            border-color: #80DEEA;
+        }
+        .condition-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+        .condition-btn {
+            flex: 1;
+            min-width: 100px;
+            padding: 10px;
+            background-color: #0f3460;
+            color: #c8d8e4;
+            border: 1px solid #00ACC1;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .condition-btn:hover { background-color: #00ACC1; color: #0f3460; font-weight: bold; }
+        .condition-btn.selected { background-color: #00ACC1; color: #0f3460; font-weight: bold; }
+        .check-btn {
+            width: 100%;
+            margin-top: 28px;
+            padding: 14px;
+            background-color: #00ACC1;
+            color: #0f3460;
+            font-weight: 800;
+            font-size: 1rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            transition: background 0.2s;
+        }
+        .check-btn:hover { background-color: #80DEEA; }
+        .result-box {
+            margin-top: 28px;
+            background-color: #0f3460;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            display: none;
+            border: 2px solid #00ACC1;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        .result-box .shoe-emoji { font-size: 2.5rem; margin-bottom: 10px; }
+        .result-box .shoe-name { color: #80DEEA; font-size: 1rem; margin-bottom: 6px; }
+        .result-box .value-label { color: #8899aa; font-size: 0.82rem; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .result-box .value { color: #ffffff; font-size: 2.4rem; font-weight: 800; margin-bottom: 6px; }
+        .result-box .premium { font-size: 0.9rem; margin-bottom: 10px; }
+        .result-box .verdict { font-size: 0.88rem; color: #c8d8e4; border-top: 1px solid #1a3a6e; padding-top: 12px; margin-top: 6px; }
+        .positive { color: #4CAF50; }
+        .neutral { color: #FFC107; }
+        .negative { color: #f44336; }
+        .disclaimer { margin-top: 20px; font-size: 0.75rem; color: #556677; text-align: center; }
+        footer-link { display: block; text-align: center; margin-top: 24px; }
+        .footer-back { color: #80DEEA; font-size: 0.85rem; text-decoration: none; }
+        .footer-back:hover { color: white; }
+    </style>
+</head>
+<body>
+
+    <a href="scratch.html" class="back-link">← Back to Sneakers & Collectibles</a>
+
+    <div class="app-card">
+        <h1>Sneaker Value Tracker</h1>
+        <p class="subtitle">Estimate resale value based on brand, model, and condition</p>
+
+        <label for="brand">Brand</label>
+        <select id="brand" onchange="updateModels()">
+            <option value="">-- Select Brand --</option>
+            <option value="jordan">Jordan Brand</option>
+            <option value="nike">Nike</option>
+            <option value="adidas">Adidas / Yeezy</option>
+            <option value="newbalance">New Balance</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="model">Model</label>
+        <select id="model">
+            <option value="">-- Select Brand First --</option>
+        </select>
+
+        <label for="size">Size (US Men's)</label>
+        <input type="number" id="size" min="4" max="18" step="0.5" placeholder="e.g. 10">
+
+        <label>Condition</label>
+        <div class="condition-group" id="conditionGroup">
+            <div class="condition-btn" onclick="selectCondition(this, 'ds')">Deadstock</div>
+            <div class="condition-btn" onclick="selectCondition(this, 'vnds')">Near DS</div>
+            <div class="condition-btn" onclick="selectCondition(this, 'used')">Used</div>
+            <div class="condition-btn" onclick="selectCondition(this, 'beaters')">Beaters</div>
+        </div>
+
+        <button class="check-btn" onclick="calculateValue()">Check Resale Value</button>
+
+        <div class="result-box" id="resultBox">
+            <div id="resultEmoji" style="display:none;"></div>
+            <div class="shoe-name" id="resultName"></div>
+            <div class="value-label">Estimated Resale Value</div>
+            <div class="value" id="resultValue"></div>
+            <div class="premium" id="resultPremium"></div>
+            <div class="verdict" id="resultVerdict"></div>
+        </div>
+
+        <p class="disclaimer">* Estimates based on recent StockX/GOAT market trends. Actual prices vary by size, colorway, and market conditions.</p>
+    </div>
+
+    <a href="scratch.html" class="footer-back" style="margin-top:20px;">← Back to Sneaker Page</a>
+
+    <script>
+        let selectedCondition = null;
+
+        const models = {
+            jordan: [
+                { name: "Air Jordan 3 UNC", retail: 200, base: 380 },
+                { name: "Air Jordan 1 Retro High OG Chicago", retail: 180, base: 900 },
+                { name: "Air Jordan 4 Military Black", retail: 210, base: 420 },
+                { name: "Air Jordan 11 Concord", retail: 220, base: 350 },
+                { name: "Air Jordan 1 Low", retail: 110, base: 130 },
+            ],
+            nike: [
+                { name: "Nike SB Dunk Low Pro", retail: 110, base: 250 },
+                { name: "Nike Air Max 90", retail: 120, base: 140 },
+                { name: "Nike Air Force 1 Low", retail: 90, base: 105 },
+                { name: "Nike Shox TL", retail: 160, base: 190 },
+            ],
+            adidas: [
+                { name: "Yeezy 350 V2 Zebra", retail: 220, base: 290 },
+                { name: "Yeezy 700 Analog", retail: 300, base: 260 },
+                { name: "Adidas Samba OG", retail: 100, base: 160 },
+                { name: "Adidas Campus 00s", retail: 100, base: 130 },
+            ],
+            newbalance: [
+                { name: "New Balance 990v4 USA", retail: 185, base: 230 },
+                { name: "New Balance 2002R", retail: 130, base: 180 },
+                { name: "New Balance 550", retail: 110, base: 150 },
+            ],
+            other: [
+                { name: "Generic Hype Sneaker", retail: 150, base: 175 },
+            ]
+        };
+
+        const conditionMultipliers = { ds: 1.0, vnds: 0.82, used: 0.60, beaters: 0.30 };
+        const conditionLabels = { ds: "Deadstock (unworn, box included)", vnds: "Very Near Deadstock", used: "Used (visible wear)", beaters: "Heavy wear / project shoes" };
+
+        function updateModels() {
+            const brand = document.getElementById('brand').value;
+            const modelSelect = document.getElementById('model');
+            modelSelect.innerHTML = '<option value="">-- Select Model --</option>';
+            if (brand && models[brand]) {
+                models[brand].forEach((m, i) => {
+                    const opt = document.createElement('option');
+                    opt.value = i;
+                    opt.text = m.name;
+                    modelSelect.appendChild(opt);
+                });
+            }
+        }
+
+        function selectCondition(el, val) {
+            document.querySelectorAll('.condition-btn').forEach(b => b.classList.remove('selected'));
+            el.classList.add('selected');
+            selectedCondition = val;
+        }
+
+        function calculateValue() {
+            const brand = document.getElementById('brand').value;
+            const modelIdx = document.getElementById('model').value;
+            const size = parseFloat(document.getElementById('size').value);
+
+            if (!brand || modelIdx === '' || !selectedCondition || !size) {
+                alert('Please fill out all fields before checking value!');
+                return;
+            }
+
+            const shoe = models[brand][modelIdx];
+            let value = shoe.base * conditionMultipliers[selectedCondition];
+
+            // Size premium/discount
+            if (size >= 9 && size <= 11) value *= 1.05;
+            else if (size < 7 || size > 14) value *= 0.88;
+
+            value = Math.round(value / 5) * 5;
+
+            const premium = value - shoe.retail;
+            const premiumPct = Math.round((premium / shoe.retail) * 100);
+
+            document.getElementById('resultEmoji').textContent = '';
+            document.getElementById('resultName').textContent = shoe.name + ' — Size ' + size;
+            document.getElementById('resultValue').textContent = '$' + value.toLocaleString();
+
+            let premiumText = '';
+            let premiumClass = '';
+            if (premium > 0) {
+                premiumText = '+$' + premium + ' above retail (' + premiumPct + '% premium)';
+                premiumClass = 'positive';
+            } else if (premium === 0) {
+                premiumText = 'At retail value';
+                premiumClass = 'neutral';
+            } else {
+                premiumText = '$' + Math.abs(premium) + ' below retail';
+                premiumClass = 'negative';
+            }
+
+            document.getElementById('resultPremium').innerHTML = '<span class="' + premiumClass + '">' + premiumText + '</span>';
+
+            let verdict = '';
+            if (value > shoe.retail * 1.5) verdict = 'Hot pickup — strong resale demand. Consider holding or flipping.';
+            else if (value > shoe.retail) verdict = 'Solid investment. Selling above retail in ' + conditionLabels[selectedCondition] + ' condition.';
+            else verdict = 'Below or at retail. Best to hold or wear — resale not ideal right now.';
+            document.getElementById('resultVerdict').textContent = verdict;
+
+            const box = document.getElementById('resultBox');
+            box.style.display = 'block';
+            box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
+
+</body>
+</html>

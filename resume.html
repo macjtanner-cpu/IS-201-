@@ -1,0 +1,229 @@
+<!--
+Mckay Tanner
+IS 201
+4/8/2026
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Mckay Tanner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #E0F7FA; }
+        .navbar { background-color: #006064 !important; }
+        .navbar-brand, .nav-link { color: white !important; }
+        .nav-link:hover { color: #80DEEA !important; }
+        .resume-header {
+            background: linear-gradient(135deg, #006064, #00838F);
+            color: white;
+            padding: 50px 0 30px;
+            text-align: center;
+        }
+        .resume-header img {
+            width: 110px; height: 110px;
+            border-radius: 50%;
+            object-fit: cover; object-position: top;
+            border: 4px solid #80DEEA;
+            margin-bottom: 14px;
+        }
+        .section-card {
+            background: white;
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin-bottom: 22px;
+            box-shadow: 0 2px 14px rgba(0,96,100,0.08);
+        }
+        .section-title {
+            color: #006064;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-bottom: 3px solid #80DEEA;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+        .job-title { font-weight: 700; color: #212121; margin-bottom: 2px; }
+        .job-meta { color: #00838F; font-size: 0.88rem; margin-bottom: 8px; }
+        .skill-badge {
+            display: inline-block;
+            background-color: #E0F7FA;
+            color: #006064;
+            border: 1px solid #80DEEA;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 4px;
+            font-weight: 500;
+        }
+        .quick-nav a {
+            color: #006064;
+            font-weight: 600;
+            text-decoration: none;
+            margin-right: 12px;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 2px;
+        }
+        .quick-nav a:hover { border-bottom-color: #006064; }
+        footer { background-color: #006064; color: #B2EBF2; }
+    </style>
+</head>
+<body id="top">
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Mckay Tanner</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutme.html">About Me</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="resume-header">
+        <img src="images/Selfie.JPG" alt="Mckay Tanner">
+        <h1 class="fw-bold fs-2">Mckay Tanner</h1>
+        <p class="mb-1">Customer Success Manager &nbsp;|&nbsp; SocialClimb</p>
+        <p class="mb-0" style="color:#B2EBF2; font-size:0.9rem;">Alpine, UT &nbsp;|&nbsp; mckayt3@byu.edu &nbsp;|&nbsp; 801.850.2776</p>
+    </div>
+
+    <div class="container py-4" style="max-width: 820px;">
+
+        <div class="quick-nav text-center mb-4">
+            <a href="#edu">Education</a>
+            <a href="#exp">Experience</a>
+            <a href="#leadership">Leadership</a>
+            <a href="#skills">Skills</a>
+        </div>
+
+        <!-- Education -->
+        <div class="section-card" id="edu">
+            <div class="section-title"><i class="fas fa-graduation-cap me-2"></i>Education</div>
+            <div class="d-flex justify-content-between flex-wrap">
+                <div>
+                    <div class="job-title">Brigham Young University</div>
+                    <div class="job-meta">Pre-Business &nbsp;|&nbsp; Minor in Global Community Impact</div>
+                    <ul style="color:#555; font-size:0.93rem;">
+                        <li>GPA: 3.72 / 4.00</li>
+                        <li>Investment Banking Association</li>
+                        <li>Private Equity &amp; Venture Capital Association</li>
+                    </ul>
+                </div>
+                <div style="color:#888; font-size:0.88rem;">Provo, UT &nbsp;|&nbsp; Dec 2028</div>
+            </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="section-card" id="exp">
+            <div class="section-title"><i class="fas fa-briefcase me-2"></i>Experience</div>
+
+            <div class="mb-4">
+                <div class="d-flex justify-content-between flex-wrap">
+                    <div class="job-title">Customer Success Manager</div>
+                    <div style="color:#888; font-size:0.88rem;">Jul 2025 – Present</div>
+                </div>
+                <div class="job-meta">SocialClimb &nbsp;|&nbsp; Lehi, UT &nbsp;|&nbsp; <a href="https://socialclimb.com" target="_blank" style="color:#00838F;">Visit company website</a></div>
+                <ul style="color:#555; font-size:0.93rem;">
+                    <li>Manage a $666K portfolio, advising healthcare clients on SEO investments</li>
+                    <li>Analyze contracts to identify pricing gaps and upsell opportunities</li>
+                    <li>Optimize advertising budgets using performance data to increase ROI</li>
+                    <li>Led end-to-end renewals aligned with client growth objectives</li>
+                </ul>
+            </div>
+            <hr>
+            <div class="mb-4">
+                <div class="d-flex justify-content-between flex-wrap">
+                    <div class="job-title">Sales Development Representative</div>
+                    <div style="color:#888; font-size:0.88rem;">Oct 2024 – May 2025</div>
+                </div>
+                <div class="job-meta">Banner &nbsp;|&nbsp; Pleasant Grove, UT</div>
+                <ul style="color:#555; font-size:0.93rem;">
+                    <li>Generated $100K in revenue in 6 months through targeted outbound prospecting</li>
+                    <li>Expanded company footprint by building pipeline of high-potential prospects</li>
+                    <li>Drove expansion into new territories by identifying target markets</li>
+                </ul>
+            </div>
+            <hr>
+            <div class="mb-4">
+                <div class="d-flex justify-content-between flex-wrap">
+                    <div class="job-title">Business Strategy Intern</div>
+                    <div style="color:#888; font-size:0.88rem;">May 2022 – Jul 2022</div>
+                </div>
+                <div class="job-meta">Cooperative &nbsp;|&nbsp; Pleasant Grove, UT</div>
+                <ul style="color:#555; font-size:0.93rem;">
+                    <li>Evaluated inventory opportunities using pricing spreads and resale demand</li>
+                    <li>Provided data-driven insights on pricing trends to guide purchasing decisions</li>
+                    <li>Negotiated bulk inventory purchases at national showcases</li>
+                </ul>
+            </div>
+            <hr>
+            <div>
+                <div class="d-flex justify-content-between flex-wrap">
+                    <div class="job-title">Strategy / Finance Case Competition</div>
+                    <div style="color:#888; font-size:0.88rem;">Mar 2026</div>
+                </div>
+                <div class="job-meta">Sunoco — BYU Finance Case Competition &nbsp;|&nbsp; Provo, UT</div>
+                <ul style="color:#555; font-size:0.93rem;">
+                    <li>Analyzed 4B+ gallon Southwest fuel market to identify expansion opportunity</li>
+                    <li>Assessed market demand, supply constraints, and key investment risks</li>
+                    <li>Developed strategy to build a multi-state distribution platform</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Leadership -->
+        <div class="section-card" id="leadership">
+            <div class="section-title"><i class="fas fa-hands-helping me-2"></i>Leadership &amp; Service</div>
+            <div class="d-flex justify-content-between flex-wrap">
+                <div>
+                    <div class="job-title">Volunteer Representative</div>
+                    <div class="job-meta">The Church of Jesus Christ of Latter-day Saints &nbsp;|&nbsp; Milan, Italy</div>
+                    <ul style="color:#555; font-size:0.93rem;">
+                        <li>Set weekly outreach goals and planned community engagement strategies</li>
+                        <li>Organized community service initiatives including disaster relief projects</li>
+                        <li>Taught weekly English and Italian language courses to community members</li>
+                    </ul>
+                </div>
+                <div style="color:#888; font-size:0.88rem;">Aug 2022 – Aug 2024</div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="section-card" id="skills">
+            <div class="section-title"><i class="fas fa-tools me-2"></i>Skills</div>
+            <div>
+                <span class="skill-badge">Financial Analysis</span>
+                <span class="skill-badge">Client Portfolio Management</span>
+                <span class="skill-badge">Italian (Professional)</span>
+                <span class="skill-badge">Case Competition</span>
+                <span class="skill-badge">SQL</span>
+                <span class="skill-badge">Tableau</span>
+                <span class="skill-badge">Excel (Solver, Pivot Tables)</span>
+                <span class="skill-badge">HTML &amp; CSS</span>
+                <span class="skill-badge">Bootstrap</span>
+                <span class="skill-badge">VBA Programming</span>
+                <span class="skill-badge">Entity-Relationship Diagramming</span>
+                <span class="skill-badge">Database Design</span>
+                <span class="skill-badge">Flow Chart Diagramming</span>
+            </div>
+        </div>
+
+        <div class="text-center mt-2 mb-4">
+            <a href="#top" style="color:#006064; font-weight:600; text-decoration:none;">↑ Back to Top</a>
+        </div>
+    </div>
+
+    <footer class="text-center py-3">
+        <p class="mb-0">&copy; 2026 Mckay Tanner &nbsp;|&nbsp; IS 201</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

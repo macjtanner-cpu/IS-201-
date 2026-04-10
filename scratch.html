@@ -1,0 +1,427 @@
+<!--
+Mckay Tanner
+IS 201
+4/8/2026
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneakers & Collectibles - Mckay Tanner</title>
+    <link rel="stylesheet" href="css/scratch.css">
+    <style>
+        /* === Embedded Sneaker Value Tracker === */
+        .tracker-embed {
+            background-color: #16213e;
+            border-radius: 12px;
+            padding: 32px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .tracker-subtitle {
+            color: #8899aa !important;
+            font-size: 0.88rem;
+            text-align: center;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+        .tracker-label {
+            display: block;
+            color: #80DEEA;
+            font-size: 0.82rem;
+            font-weight: bold;
+            margin-bottom: 6px;
+            margin-top: 16px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .tracker-select, .tracker-input {
+            width: 100%;
+            padding: 11px 14px;
+            background-color: #0f3460;
+            color: #e0e0e0;
+            border: 1px solid #00ACC1;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            appearance: none;
+            box-sizing: border-box;
+        }
+        .tracker-select:focus, .tracker-input:focus {
+            outline: none;
+            border-color: #80DEEA;
+        }
+        .tracker-condition-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+        .tracker-condition-btn {
+            flex: 1;
+            min-width: 100px;
+            padding: 10px;
+            background-color: #0f3460;
+            color: #c8d8e4;
+            border: 1px solid #00ACC1;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            text-align: center;
+            transition: all 0.2s;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .tracker-condition-btn:hover { background-color: #00ACC1; color: #0f3460; font-weight: bold; }
+        .tracker-condition-btn.selected { background-color: #00ACC1; color: #0f3460; font-weight: bold; }
+        .tracker-check-btn {
+            width: 100%;
+            margin-top: 24px;
+            padding: 14px;
+            background-color: #00ACC1;
+            color: #0f3460;
+            font-weight: 800;
+            font-size: 1rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            transition: background 0.2s;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .tracker-check-btn:hover { background-color: #80DEEA; }
+        .tracker-result-box {
+            margin-top: 24px;
+            background-color: #0f3460;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            display: none;
+            border: 2px solid #00ACC1;
+            animation: trackerFadeIn 0.3s ease;
+        }
+        @keyframes trackerFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        .tracker-shoe-name { color: #80DEEA; font-size: 1rem; margin-bottom: 6px; }
+        .tracker-value-label { color: #8899aa; font-size: 0.82rem; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .tracker-value { color: #ffffff; font-size: 2.4rem; font-weight: 800; margin-bottom: 6px; }
+        .tracker-premium { font-size: 0.9rem; margin-bottom: 10px; }
+        .tracker-verdict { font-size: 0.88rem; color: #c8d8e4; border-top: 1px solid #1a3a6e; padding-top: 12px; margin-top: 6px; }
+        .tracker-disclaimer { margin-top: 18px; font-size: 0.75rem; color: #556677; text-align: center; line-height: 1.5; }
+        .t-positive { color: #4CAF50; }
+        .t-neutral { color: #FFC107; }
+        .t-negative { color: #f44336; }
+    </style>
+</head>
+<body id="top">
+
+    <!-- Navigation back to professional pages -->
+    <div class="top-nav">
+        <a href="index.html" class="brand">Mckay Tanner</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="resume.html">Resume</a>
+            <a href="aboutme.html">About Me</a>
+            <a href="app.html">Sneaker App</a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero-div">
+        <h1>SNEAKERS &amp; COLLECTIBLES</h1>
+        <p>Where market trends meet personal passion — a deep dive into sneaker culture, resale value, and the art of the collection.</p>
+    </div>
+
+    <div class="content-div">
+
+        <!-- About the Collection -->
+        <div class="section-div">
+            <h2>My Collection</h2>
+            <p>
+                I've built a 70+ pair sneaker collection focused on market trends and valuation. For me, sneakers
+                are more than just shoes — they're a market. Understanding release hype, resale premiums, and
+                long-term value retention is something I genuinely study. My prized possession? The <strong style="color:#80DEEA;">Air Jordan 3 UNC</strong> —
+                a clean University Blue colorway that never goes out of style.
+            </p>
+        </div>
+
+        <!-- Nested List: Sneaker Categories -->
+        <div class="section-div" id="categories">
+            <h2>My Sneaker Breakdown</h2>
+            <ol>
+                <li>Jordan Brand
+                    <ul>
+                        <li>Air Jordan 3 UNC — my favorite pair</li>
+                        <li>Air Jordan 1 Retro High OG</li>
+                        <li>Air Jordan 4 Military Black</li>
+                    </ul>
+                </li>
+                <li>Nike
+                    <ul>
+                        <li>Nike SB Dunk Low Pro</li>
+                        <li>Nike Air Max 90</li>
+                        <li>Nike Air Force 1 Low</li>
+                    </ul>
+                </li>
+                <li>Adidas
+                    <ul>
+                        <li>Yeezy 350 V2 Zebra</li>
+                        <li>Adidas Samba OG</li>
+                    </ul>
+                </li>
+                <li>New Balance
+                    <ul>
+                        <li>New Balance 990v4 Made in USA</li>
+                        <li>New Balance 2002R</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Image -->
+        <div class="section-div">
+            <h2>My Favorite Pair</h2>
+            <p style="margin-bottom:20px;">
+                The Air Jordan 3 "UNC" — white leather, University Blue accents, and a clean cement grey sole.
+                Released in limited quantities, it sits above retail on the resale market and only gets better with age.
+            </p>
+            <img src="images/UNC_Jordan3.jpg" alt="Air Jordan 3 UNC" class="sneaker-img">
+            <p style="text-align:center; margin-top:12px; font-size:0.85rem; color:#006064;">Air Jordan 3 "UNC" — University Blue colorway</p>
+        </div>
+
+        <!-- YouTube Video -->
+        <div class="section-div">
+            <h2>Air Jordan 3 UNC — Full Review</h2>
+            <p style="margin-bottom:16px;">
+                WearTesters breaks down the Air Jordan 3 UNC in full detail — materials, fit, comfort, and resale potential.
+                This is one of the most thorough reviews of the shoe out there.
+            </p>
+            <div class="video-wrapper">
+                <iframe
+                    src="https://www.youtube.com/embed/644cxxnbGs8"
+                    title="Air Jordan 3 UNC Review - WearTesters"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Tableau Viz -->
+        <div class="section-div">
+            <h2>Sneaker Resale Market Data (StockX)</h2>
+            <p style="margin-bottom:20px;">
+                The interactive dashboard below compares Off-White x Nike and Adidas Yeezy resale data from StockX —
+                tracking average sale prices over time and regional sales volume across the U.S.
+                Hover over the data points to explore the numbers.
+            </p>
+            <div class="tableau-wrapper">
+                <div class='tableauPlaceholder' id='viz1775835373645' style='position: relative'>
+                    <noscript>
+                        <a href='#'>
+                            <img alt='Dashboard 1' src='https://public.tableau.com/static/images/Of/OffwhiteVsYeezy/Dashboard1/1_rss.png' style='border: none' />
+                        </a>
+                    </noscript>
+                    <object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='OffwhiteVsYeezy&#47;Dashboard1' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https://public.tableau.com/static/images/Of/OffwhiteVsYeezy/Dashboard1/1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='en-US' />
+                        <param name='filter' value='publish=yes' />
+                    </object>
+                </div>
+                <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1775835373645');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    if (divElement.offsetWidth > 800) {
+                        vizElement.style.minWidth = '420px'; vizElement.style.maxWidth = '650px';
+                        vizElement.style.width = '100%'; vizElement.style.minHeight = '587px';
+                        vizElement.style.maxHeight = '887px'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                    } else if (divElement.offsetWidth > 500) {
+                        vizElement.style.minWidth = '420px'; vizElement.style.maxWidth = '650px';
+                        vizElement.style.width = '100%'; vizElement.style.minHeight = '587px';
+                        vizElement.style.maxHeight = '887px'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                    } else {
+                        vizElement.style.width = '100%'; vizElement.style.height = '777px';
+                    }
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+            </div>
+        </div>
+
+        <!-- App Embed -->
+        <div class="section-div">
+            <h2>Sneaker Value Tracker</h2>
+            <p style="margin-bottom:24px;">
+                Want to know what your sneakers are worth on the resale market?
+                Use the tool below to estimate resale value based on brand, model, and condition.
+            </p>
+
+            <div class="tracker-embed">
+                <p class="tracker-subtitle">Estimate resale value based on brand, model, and condition</p>
+
+                <label class="tracker-label" for="t-brand">Brand</label>
+                <select class="tracker-select" id="t-brand" onchange="trackerUpdateModels()">
+                    <option value="">-- Select Brand --</option>
+                    <option value="jordan">Jordan Brand</option>
+                    <option value="nike">Nike</option>
+                    <option value="adidas">Adidas / Yeezy</option>
+                    <option value="newbalance">New Balance</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label class="tracker-label" for="t-model">Model</label>
+                <select class="tracker-select" id="t-model">
+                    <option value="">-- Select Brand First --</option>
+                </select>
+
+                <label class="tracker-label" for="t-size">Size (US Men's)</label>
+                <input class="tracker-input" type="number" id="t-size" min="4" max="18" step="0.5" placeholder="e.g. 10">
+
+                <label class="tracker-label">Condition</label>
+                <div class="tracker-condition-group" id="t-conditionGroup">
+                    <div class="tracker-condition-btn" onclick="trackerSelectCondition(this, 'ds')">Deadstock</div>
+                    <div class="tracker-condition-btn" onclick="trackerSelectCondition(this, 'vnds')">Near DS</div>
+                    <div class="tracker-condition-btn" onclick="trackerSelectCondition(this, 'used')">Used</div>
+                    <div class="tracker-condition-btn" onclick="trackerSelectCondition(this, 'beaters')">Beaters</div>
+                </div>
+
+                <button class="tracker-check-btn" onclick="trackerCalculateValue()">Check Resale Value</button>
+
+                <div class="tracker-result-box" id="t-resultBox">
+                    <div class="tracker-shoe-name" id="t-resultName"></div>
+                    <div class="tracker-value-label">Estimated Resale Value</div>
+                    <div class="tracker-value" id="t-resultValue"></div>
+                    <div class="tracker-premium" id="t-resultPremium"></div>
+                    <div class="tracker-verdict" id="t-resultVerdict"></div>
+                </div>
+
+                <p class="tracker-disclaimer">* Estimates based on recent StockX/GOAT market trends. Actual prices vary by size, colorway, and market conditions.</p>
+            </div>
+        </div>
+
+        <!-- Back to top anchor -->
+        <div style="text-align:center; margin-top:10px; margin-bottom:20px;">
+            <a href="#top" class="back-top">↑ Back to Top</a>
+        </div>
+
+    </div>
+
+    <div class="page-footer">
+        &copy; 2026 Mckay Tanner &nbsp;|&nbsp; IS 201 &nbsp;|&nbsp; Sneakers &amp; Collectibles
+    </div>
+
+    <script>
+        let trackerSelectedCondition = null;
+
+        const trackerModels = {
+            jordan: [
+                { name: "Air Jordan 3 UNC", retail: 200, base: 380 },
+                { name: "Air Jordan 1 Retro High OG Chicago", retail: 180, base: 900 },
+                { name: "Air Jordan 4 Military Black", retail: 210, base: 420 },
+                { name: "Air Jordan 11 Concord", retail: 220, base: 350 },
+                { name: "Air Jordan 1 Low", retail: 110, base: 130 },
+            ],
+            nike: [
+                { name: "Nike SB Dunk Low Pro", retail: 110, base: 250 },
+                { name: "Nike Air Max 90", retail: 120, base: 140 },
+                { name: "Nike Air Force 1 Low", retail: 90, base: 105 },
+                { name: "Nike Shox TL", retail: 160, base: 190 },
+            ],
+            adidas: [
+                { name: "Yeezy 350 V2 Zebra", retail: 220, base: 290 },
+                { name: "Yeezy 700 Analog", retail: 300, base: 260 },
+                { name: "Adidas Samba OG", retail: 100, base: 160 },
+                { name: "Adidas Campus 00s", retail: 100, base: 130 },
+            ],
+            newbalance: [
+                { name: "New Balance 990v4 USA", retail: 185, base: 230 },
+                { name: "New Balance 2002R", retail: 130, base: 180 },
+                { name: "New Balance 550", retail: 110, base: 150 },
+            ],
+            other: [
+                { name: "Generic Hype Sneaker", retail: 150, base: 175 },
+            ]
+        };
+
+        const trackerConditionMultipliers = { ds: 1.0, vnds: 0.82, used: 0.60, beaters: 0.30 };
+        const trackerConditionLabels = { ds: "Deadstock (unworn, box included)", vnds: "Very Near Deadstock", used: "Used (visible wear)", beaters: "Heavy wear / project shoes" };
+
+        function trackerUpdateModels() {
+            const brand = document.getElementById('t-brand').value;
+            const modelSelect = document.getElementById('t-model');
+            modelSelect.innerHTML = '<option value="">-- Select Model --</option>';
+            if (brand && trackerModels[brand]) {
+                trackerModels[brand].forEach((m, i) => {
+                    const opt = document.createElement('option');
+                    opt.value = i;
+                    opt.text = m.name;
+                    modelSelect.appendChild(opt);
+                });
+            }
+        }
+
+        function trackerSelectCondition(el, val) {
+            document.querySelectorAll('.tracker-condition-btn').forEach(b => b.classList.remove('selected'));
+            el.classList.add('selected');
+            trackerSelectedCondition = val;
+        }
+
+        function trackerCalculateValue() {
+            const brand = document.getElementById('t-brand').value;
+            const modelIdx = document.getElementById('t-model').value;
+            const size = parseFloat(document.getElementById('t-size').value);
+
+            if (!brand || modelIdx === '' || !trackerSelectedCondition || !size) {
+                alert('Please fill out all fields before checking value!');
+                return;
+            }
+
+            const shoe = trackerModels[brand][modelIdx];
+            let value = shoe.base * trackerConditionMultipliers[trackerSelectedCondition];
+
+            if (size >= 9 && size <= 11) value *= 1.05;
+            else if (size < 7 || size > 14) value *= 0.88;
+
+            value = Math.round(value / 5) * 5;
+
+            const premium = value - shoe.retail;
+            const premiumPct = Math.round((premium / shoe.retail) * 100);
+
+            document.getElementById('t-resultName').textContent = shoe.name + ' — Size ' + size;
+            document.getElementById('t-resultValue').textContent = '$' + value.toLocaleString();
+
+            let premiumText = '', premiumClass = '';
+            if (premium > 0) {
+                premiumText = '+$' + premium + ' above retail (' + premiumPct + '% premium)';
+                premiumClass = 't-positive';
+            } else if (premium === 0) {
+                premiumText = 'At retail value';
+                premiumClass = 't-neutral';
+            } else {
+                premiumText = '$' + Math.abs(premium) + ' below retail';
+                premiumClass = 't-negative';
+            }
+
+            document.getElementById('t-resultPremium').innerHTML = '<span class="' + premiumClass + '">' + premiumText + '</span>';
+
+            let verdict = '';
+            if (value > shoe.retail * 1.5) verdict = 'Hot pickup — strong resale demand. Consider holding or flipping.';
+            else if (value > shoe.retail) verdict = 'Solid investment. Selling above retail in ' + trackerConditionLabels[trackerSelectedCondition] + ' condition.';
+            else verdict = 'Below or at retail. Best to hold or wear — resale not ideal right now.';
+            document.getElementById('t-resultVerdict').textContent = verdict;
+
+            const box = document.getElementById('t-resultBox');
+            box.style.display = 'block';
+            box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
+</body>
+</html>

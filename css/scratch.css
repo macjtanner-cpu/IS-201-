@@ -1,0 +1,221 @@
+/* scratch.css - Mckay Tanner IS 201 */
+
+/* === Body & Page === */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #E0F7FA;
+    color: #212121;
+    margin: 0;
+    padding: 0;
+}
+
+/* === Navigation === */
+.top-nav {
+    background-color: #006064;
+    padding: 12px 24px;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-nav .brand {
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.top-nav .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.92rem;
+}
+
+.top-nav .nav-links a:hover {
+    color: #80DEEA;
+    text-decoration: underline;
+}
+
+/* === Hero Banner === */
+.hero-div {
+    background: linear-gradient(135deg, #006064, #00838F);
+    text-align: center;
+    padding: 60px 20px 45px;
+    color: white;
+}
+
+.hero-div h1 {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.hero-div p {
+    color: #B2EBF2;
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* === Main Layout === */
+.content-div {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* === Section Boxes === */
+.section-div {
+    background-color: white;
+    border-radius: 12px;
+    padding: 28px 30px;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 14px rgba(0, 96, 100, 0.08);
+    border-left: 5px solid #006064;
+}
+
+.section-div h2 {
+    font-family: 'Segoe UI', sans-serif;
+    color: #006064;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    border-bottom: 2px solid #B2EBF2;
+    padding-bottom: 10px;
+}
+
+.section-div p {
+    color: #555;
+    line-height: 1.8;
+}
+
+/* === Lists === */
+ol {
+    line-height: 2;
+    font-family: 'Segoe UI', sans-serif;
+    color: #212121;
+    padding-left: 20px;
+}
+
+ol li {
+    font-weight: 700;
+    color: #006064;
+    margin-bottom: 6px;
+}
+
+ul {
+    line-height: 1.9;
+    padding-left: 20px;
+}
+
+ul li {
+    font-weight: normal;
+    color: #444;
+}
+
+/* === Images === */
+.sneaker-img {
+    border-radius: 10px;
+    border: 3px solid #80DEEA;
+    width: 100%;
+    max-width: 360px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* === Video Embed === */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 3px solid #80DEEA;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* === Tableau === */
+.tableau-wrapper {
+    border-radius: 10px;
+    border: 3px solid #80DEEA;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    width: 100%;
+    position: relative;
+}
+
+.tableau-responsive {
+    position: relative;
+    width: 100%;
+    padding-bottom: 75%;
+    height: 0;
+    overflow: hidden;
+}
+
+.tableau-responsive iframe,
+.tableau-responsive object,
+.tableau-responsive embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* === App Link Button === */
+.app-link {
+    display: inline-block;
+    background-color: #006064;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px 36px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.app-link:hover {
+    background-color: #00838F;
+}
+
+/* === Back to Top === */
+.back-top {
+    color: #006064;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.back-top:hover {
+    text-decoration: underline;
+}
+
+/* === Footer === */
+.page-footer {
+    background-color: #006064;
+    color: #B2EBF2;
+    text-align: center;
+    padding: 16px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.85rem;
+}
